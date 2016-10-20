@@ -56,9 +56,17 @@ body {
 	right: 20px;
 }
 
-.reveal .white {
+.reveal img.white {
 	filter: brightness(100);
 	-moz-filter: brightness(100);
+}
+
+.reveal .white {
+  color: #FFF;
+}
+
+.reveal .red {
+  color: #C13832;
 }
 
 /*********************************************

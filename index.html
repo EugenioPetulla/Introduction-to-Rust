@@ -12,20 +12,73 @@
 	<div class="mozlogo"><img src="assets/mozlogo.png"></div>
 	<div class="reveal">
         <div class="slides">
-            <section>
+            <section id="slide-1">
             	<img src="images/rust-logo.png" width="350" height="350" class="white">
             	<h1>Introduction to Rust:</h1>
             	<h3>a modern programming language</h3>
             </section>
-            <section>
-            <h1>Back in time...</h1>
-            <ul>
-            	<p class="fragment grow"><strong>2009</strong> - Graydon Hoare</p>
-            	<p class="fragment grow"><strong>2010</strong> - Mozilla adoption</p>
-            	<p class="fragment grow"><strong>2012</strong> - First release of the compiler</p>
-            	<p class="fragment grow"><strong>2015</strong> - First stable realese (1.0)</p>
-            	<p class="fragment grow"><strong>2016</strong> - Most Loved Language for <a href="http://stackoverflow.com/research/developer-survey-2016#technology-most-loved-dreaded-and-wanted"><strong>StackOverflow</strong></a></p>
-            </ul>
+            <section id="slide-2">
+	            <section>
+		            <h1>Back to the time...</h1>
+		            <ul>
+			        	<p class="fragment grow"><strong>2009</strong> - Graydon Hoare</p>
+			        	<p class="fragment grow"><strong>2010</strong> - Mozilla adoption</p>
+			        	<p class="fragment grow"><strong>2012</strong> - First release of the compiler</p>
+			        	<p class="fragment grow"><strong>2015</strong> - First stable realese (1.0)</p>
+			        	<p class="fragment grow"><strong>2016</strong> - Most Loved Language for <a href="http://stackoverflow.com/research/developer-survey-2016#technology-most-loved-dreaded-and-wanted"><strong>StackOverflow</strong></a></p>
+		        	</ul>
+	        	</section>
+        		<section>
+        			<h3>StackOverflow 2016</h3>
+        			<img src="images/stackoverflow.png">
+        		</section>
+            </section>
+            <section id="slide-3">
+            	<h1>What is Rust?</h1>
+            	<p><em>Rust is a <strong>systems programming language</strong> focused on three goals: safety, speed, and concurrency.</em></p>
+            </section>
+            <section id="slide-4">
+            	<h1>What is included?</h1>
+            	<ul>
+            		<p class="fragment grow">Stack allocation of structures</p>
+    				<p class="fragment grow">Pointers into stack memory</p>
+    				<p class="fragment grow">Threads with shared memory</p>
+            	</ul>
+            </section>
+            <section id="slide-5">
+            	<section>
+	            	<h1>What is not included?</h1>
+	            	<ul>
+	            		<p class="fragment grow">No dangling pointers</p>
+	    				<p class="fragment grow">No memory leaks</p>
+	    				<p class="fragment grow">No data races</p>
+	            	</ul>
+	            </section>
+	            <section>
+	            	<img src="images/cool-story.jpg">
+	            </section>
+            </section>
+            <section id="slide-6">
+            	<h1>Memory allocation</h1>
+            	<h4>It doesn't need a runtime nor a garbage collector</h4>
+            	<ul>
+	            	<p class="fragment fade-in">Can be used to write kernels and embedded code</p>
+	    			<p class="fragment fade-in">You never get the dangers of a garbage collector kicking in at inopportune times</p>
+	    			<p class="fragment fade-in">It can integrate with other languages that do need their own runtimes (like JavaScript)</p>
+    			</ul>
+            </section>
+            <section id="slide-7">
+            	<h1>You can link with C</h1>
+            	<h2 class="fragment fade-in">So... is it possile transform it into unsafe code??</h2>
+            </section>
+            <section id="slide-8">
+            	<section>
+	            	<h1>Obvously NO!</h1>
+	            	<h2 class="fragment fade-in">You can use some unsafe features but they are clearly marked and isolated from the rest of the code</h2>
+            	</section>
+            	<section>
+            		<img src="images/not-bad.jpg">
+            	</section>
             </section>
         </div>
     </div>
