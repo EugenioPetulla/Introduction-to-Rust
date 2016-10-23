@@ -13,7 +13,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 body {
   background: #fff;
   background-color: #BAB3B2;
-  background: url('../assets/background.png');
+  background: url('../assets/background.jpg');
   background-size: cover; }
 
 .reveal {
@@ -67,6 +67,27 @@ body {
 
 .reveal .red {
   color: #C13832;
+}
+
+.reveal img.alignright {
+	float: right;
+	margin-left: 20px;
+}
+
+.reveal img.alignleft {
+	float: left;
+	margin-right: 20px;
+}
+
+.reveal .slides section .fragment.grow.visible {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    z-index: 9999999999;
+    overflow: auto;
+}
+
+.reveal #slide-me img {
+	border-radius: 50%;
 }
 
 /*********************************************
