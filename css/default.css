@@ -223,7 +223,8 @@ body {
   padding: 5px;
   overflow: auto;
   max-height: 400px;
-  word-wrap: normal; }
+  word-wrap: normal;
+  background-color: #333; }
 
 .reveal table {
   margin: auto;
