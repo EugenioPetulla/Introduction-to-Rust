@@ -80,6 +80,74 @@
             		<img src="images/not-bad.jpg">
             	</section>
             </section>
+            <section id="slide-9">
+            	<h2>Rust compiler is <em class="red">rustc</em></h2>
+            	<h3>...and it's written in Rust itself!</h3>
+            	<img src="images/nerds.gif" class="fragment fade-in">
+            </section>
+            <section id="slide-10">
+	            <section>
+	            	<img src="images/cargo.png">
+	            	<h2><em class="red">Cargo</em> Package Manager</h2>
+	            	<h3>It's also a complete project manager!</h3>
+            	</section>
+            	<section>
+	            	<h2>Crates and Modules</h2>
+	            	<h2><a href="https://crates.io/">crates.io</a></h2>
+            	</section>
+            	<section>
+	            	<h2>How it works</h2>
+	            	<pre><code>
+	$ cargo new hello_world --bin
+	            	</code></pre>
+	            	<pre class="fragment fade-in"><code>
+	$ cd hello_world
+	$ tree .
+	.
+	├── Cargo.toml
+	└── src
+	    └── main.rs
+
+	1 directory, 2 files
+					</code></pre>
+            	</section>
+            	<section>
+            		<h2>Cargo.toml</h2>
+            		<pre><code>
+	[package]
+	name = "hello_world"
+	version = "0.1.0"
+	authors = ["Your Name &lt;you@example.com&gt;"]
+            		</code></pre>
+            		<p class="fragment fade-in">This is called a <strong>manifest</strong>, and it contains all of the metadata that Cargo needs to compile your project.</p>
+            	</section>
+            </section>
+            <section id="slide-11">
+            	<section>
+            		<h2>src/main.rs</h2>
+            		<pre><code>
+    fn main() {
+    	println!("Hello, world!");
+	}
+            		</code></pre>
+            	</section>
+            	<section>
+            	<h2>Build it...</h2>
+            		<pre><code>
+    $ cargo build
+   Compiling hello_world v0.1.0 (file:///path/hello_world)
+   					</code></pre>
+            	</section>
+            	<section>
+            	<h2>... or directly run it!</h2>
+            		<pre><code>
+    $ cargo run
+    Fresh hello_world v0.1.0 (file:///path/hello_world)
+	Running `target/hello_world`
+	Hello, world!
+   					</code></pre>
+            	</section>
+            </section>
         </div>
     </div>
 	<script type="text/javascript" src="js/reveal.js"></script>
