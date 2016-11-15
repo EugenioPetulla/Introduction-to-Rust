@@ -12,12 +12,19 @@
 	<div class="mozlogo"><img src="assets/mozlogo.png"></div>
 	<div class="reveal">
         <div class="slides">
-            <section id="slide-1">
+            <section>
             	<img src="images/rust-logo.png" width="350" height="350" class="white">
             	<h1>Introduction to Rust:</h1>
             	<h3>a modern programming language</h3>
             </section>
-            <section id="slide-2">
+            <section>
+                <img src="images/profilpic.png">
+        		<h2>Eugenio Petullà</h2>
+        		<p class="fragment grow"><strong>Mozilla Tech Speaker</strong></p>
+        		<p class="fragment grow"><strong>Full Stack Developer</strong></p>
+        		<p class="fragment grow"><strong>Open Source Aholic</strong></p>
+        	</section>
+            <section>
 	            <section>
 		            <h1>Back to the time...</h1>
 		            <ul>
@@ -33,11 +40,11 @@
         			<img src="images/stackoverflow.png">
         		</section>
             </section>
-            <section id="slide-3">
+            <section>
             	<h1>What is Rust?</h1>
             	<p><em>Rust is a <strong>systems programming language</strong> focused on three goals: safety, speed, and concurrency.</em></p>
             </section>
-            <section id="slide-4">
+            <section>
             	<h1>What is included?</h1>
             	<ul>
             		<p class="fragment grow">Stack allocation of structures</p>
@@ -45,7 +52,7 @@
     				<p class="fragment grow">Threads with shared memory</p>
             	</ul>
             </section>
-            <section id="slide-5">
+            <section>
             	<section>
 	            	<h1>What is not included?</h1>
 	            	<ul>
@@ -58,7 +65,7 @@
 	            	<img src="images/cool-story.jpg">
 	            </section>
             </section>
-            <section id="slide-6">
+            <section>
             	<h1>Memory allocation</h1>
             	<h4>It doesn't need a runtime nor a garbage collector</h4>
             	<ul>
@@ -67,11 +74,11 @@
 	    			<p class="fragment fade-in">It can integrate with other languages that do need their own runtimes (like JavaScript)</p>
     			</ul>
             </section>
-            <section id="slide-7">
+            <section>
             	<h1>You can link with C</h1>
             	<h2 class="fragment fade-in">So... is it possile transform it into unsafe code??</h2>
             </section>
-            <section id="slide-8">
+            <section>
             	<section>
 	            	<h1>Obvously NO!</h1>
 	            	<h2 class="fragment fade-in">You can use some unsafe features but they are clearly marked and isolated from the rest of the code</h2>
@@ -80,12 +87,12 @@
             		<img src="images/not-bad.jpg">
             	</section>
             </section>
-            <section id="slide-9">
+            <section>
             	<h2>Rust compiler is <em class="red">rustc</em></h2>
             	<h3>...and it's written in Rust itself!</h3>
             	<img src="images/nerds.gif" class="fragment fade-in">
             </section>
-            <section id="slide-10">
+            <section>
 	            <section>
 	            	<img src="images/cargo.png">
 	            	<h2><em class="red">Cargo</em> Package Manager</h2>
@@ -122,7 +129,7 @@
             		<p class="fragment fade-in">This is called a <strong>manifest</strong>, and it contains all of the metadata that Cargo needs to compile your project.</p>
             	</section>
             </section>
-            <section id="slide-11">
+            <section>
             	<section>
             		<h2>src/main.rs</h2>
             		<pre><code>
@@ -132,10 +139,14 @@
             		</code></pre>
             	</section>
             	<section>
-            	<h2>Build it...</h2>
+            	<h2>Build it and run it...</h2>
             		<pre><code>
     $ cargo build
    Compiling hello_world v0.1.0 (file:///path/hello_world)
+   					</code></pre>
+   					<pre class="fragment fade-in"><code>
+    $ ./target/debug/hello_world
+	Hello, world!
    					</code></pre>
             	</section>
             	<section>
@@ -148,6 +159,310 @@
    					</code></pre>
             	</section>
             </section>
+            <section>
+            	<section>
+	            	<h1>Rust Syntax</h1>
+            	    <h3>Variable Bindings</h3>
+            	    <h3>Functions</h3>
+            	    <h3>Conditional</h3>
+            	    <h3>Loops</h3>
+            	    <h3>Structs</h3>
+            	    <h3>Match</h3>
+            	</section>
+            	<section>
+            		<h1>Variables</h1>
+            		<h2>Are unmutable by default</h2>
+            		<pre class="fragment fade-in"><code>
+	let var_name = 4;
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Variables</h1>
+            		<h2>Can be mutable by declaration</h2>
+            		<pre class="fragment fade-in"><code>
+	let mut var_name = other_var;
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Variables</h1>
+            		<h2>Scope and shadowing</h2>
+            		<pre class="fragment fade-in"><code>
+let x: i32 = 8;
+	{
+	    println!("{}", x); // Prints "8"
+	    let x = 12;
+	    println!("{}", x); // Prints "12"
+	}
+println!("{}", x); // Prints "8"
+let x =  42;
+println!("{}", x); // Prints "42"
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Functions</h1>
+            		<h2>Passing a value</h2>
+            		<pre><code>
+fn main() {
+    print_sum(3, 4);
+}
+
+fn print_sum(x: i32, y: i32) {
+    println!("sum is: {}", x + y);
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Functions</h1>
+            		<h2>Returing a value</h2>
+            		<pre><code>
+fn add_one(x: i32) -> i32 {
+    x + 1 // No semicolons needed here!
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Expressions vs. Statements</h1>
+            		<h3>Rust is primarily an expression-based language. There are only two kinds of statements, and everything else is an expression.</h3>
+            	</section>
+            	<section>
+            		<h1>Early returns</h1>
+            		<pre><code>
+fn foo(x: i32) -> i32 {
+    return x;
+
+    // we never run this code!
+    x + 1
+}
+            		</code></pre>
+            		<pre class="fragment fade-in"><code>
+fn foo(x: i32) -> i32 {
+    return x + 1; // Buhh, poor style!
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Conditional</h1>
+            		<h2>The <strong class="red">if</strong> statement</h2>
+            		<pre><code>
+let x = 5;
+
+let y = if x == 5 { 10 } else { 15 }; // y: i32
+            		</code></pre>
+            		<p class="fragment fade-in"><strong class="red">if</strong> is an expression. The value of the expression is the value of the last expression in whichever branch was chosen.</p>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2>Infinite <strong class="red">loop</strong></h2>
+            		<pre><code>
+loop {
+    println!("Loop forever!");
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2><strong class="red">while</strong> loop</h2>
+            		<pre><code>
+let mut x = 5; // mut x: i32
+let mut done = false; // mut done: bool
+
+while !done {
+    x += x - 3;
+
+    println!("{}", x);
+
+    if x % 5 == 0 {
+        done = true;
+    }
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2><strong class="red">for</strong> loop</h2>
+            		<pre><code>
+// C-Style
+for (x = 0; x < 10; x++) {
+    printf( "%d\n", x );
+}
+
+// Rust Style
+for x in 0..10 {
+    println!("{}", x); // x: i32
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2>On ranges</h2>
+            		<pre><code>
+for (index, value) in (5..10).enumerate() {
+    println!("index = {} and value = {}", index, value);
+}
+            		</code></pre>
+            		<h3 class="fragment fade-in">...will output</h3>
+            		<pre  class="fragment fade-in"><code>
+index = 0 and value = 5
+index = 1 and value = 6
+index = 2 and value = 7
+index = 3 and value = 8
+index = 4 and value = 9
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2>On iterators</h2>
+            		<pre><code>
+let lines = "hello\nworld".lines();
+
+for (linenumber, line) in lines.enumerate() {
+    println!("{}: {}", linenumber, line);
+}
+            		</code></pre>
+            		<h3 class="fragment fade-in">...will output</h3>
+            		<pre  class="fragment fade-in"><code>
+0: hello
+1: world
+
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2>Break the iteration</h2>
+            		<pre><code>
+let mut x = 5;
+
+loop {
+    x += x - 3;
+
+    println!("{}", x);
+
+    if x % 5 == 0 { break; }
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Loops</h1>
+            		<h2>Continue</h2>
+            		<pre><code>
+for x in 0..10 {
+    if x % 2 == 0 { continue; }
+
+    println!("{}", x);
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Structs</h1>
+            		<h3>Combine more variables in a single, unified datatype</h3>
+            		<pre><code>
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+fn main() {
+    let origin = Point { x: 0, y: 0 }; // origin: Point
+
+    println!("The origin is at ({}, {})", origin.x, origin.y);
+
+}            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Match</h1>
+            		<h3>Matching and cases</h3>
+            		<pre><code>
+let x = 1;
+
+match x {
+	0 => println!("Zero"),
+	1 => println!("One"),
+	2 => println!("Two"),
+	3 => println!("Three"),
+	4 => println!("Four"),
+	5 => println!("Five"),
+	_ => println!("Six or more!"),
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h1>Match</h1>
+            		<h3>Easy type conversion (to string)</h3>
+            		<pre><code>
+let x = 1;
+
+let number = match x {
+	0 => "0",
+	1 => "One",
+	2 => "Two",
+	3 => "Three",
+	4 => "4",
+	5 => "5",
+	_ => "Six or more!",
+}
+            		</code></pre>
+            	</section>
+            </section>
+            <section>
+            	<section>
+            		<h1>Learn by Example</h1>
+            		<h2>Guessing game!</h2>
+            	</section>
+            	<section>
+            	<h2>Include Library</h2>
+            		<pre><code>
+extern crate rand;
+
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+            		</code></pre>
+            	</section>
+            	<section>
+            		<pre><code>
+
+fn main() {
+    println!("Guess a number between 1 and 100!");
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    loop {
+        println!("Please input your guess.");
+        let mut guess = String::new();
+
+        io::stdin().read_line(&mut guess)
+            .expect("failed to read line");
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        println!("You guessed: {}", guess);
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less    => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal   => {
+                println!("You win!");
+                break;
+            }
+        }
+    }
+}
+            		</code></pre>
+            	</section>
+            	<section>
+            		<h2>Labirintite</h2>
+            		<h2>Maze generator in Rust</h2>
+            		<p><strong><a href="https://github.com/EugenioPetulla/labirintite-in-rust" class="red">github.com/EugenioPetulla/labirintite-in-rust</a></strong></p>
+            	</section>
+            </section>
+            <section>
+        		<h1>Grazie</h1>
+                <img src="images/profilpic.png">
+        		<h2>Eugenio Petullà</h2>
+        		<h3>Mozilla Tech Speaker</h3>
+        		<p><a href="https://eugeniopetulla.github.io/Introduction-to-Rust">eugeniopetulla.github.io/Introduction-to-Rust</a></p>
+        	</section>
         </div>
     </div>
 	<script type="text/javascript" src="js/reveal.js"></script>
